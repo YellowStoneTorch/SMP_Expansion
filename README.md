@@ -7,6 +7,7 @@ Various changes have been made to equipment and enchantments to improve game bal
 * Most items have modest durability increases, but gold equipment has a more significant durability increase.
 * Gold equipment also has exclusive enchantments geared towards unique use cases. (currently planned)
 * Damage of some weapons has been tweaked slightly.
+* Spear charge attacks and Mace smash attacks are calculated differently. Their damage now increases logarithmically to prevent these weapons from dealing too much damage.
 * Bows and Crossbows fired by players are reworked to deal consistent damage.
 * Projectiles no longer give damage immunity to targets.  This makes Multishot crossbows and harming arrows more effective.
 * Some enchantments have been changed:
