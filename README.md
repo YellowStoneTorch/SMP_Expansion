@@ -66,7 +66,7 @@ Villager trading has been changed to make it easier to get desired trades.
 Read about the new villager trades here.
 
 # SMP Features
-These features are useful if you plan to play with friends or strangers.  If you as the server owner wish to enforce certain settings across all players, you can configure them in the plugin config.
+These features are useful if you plan to play with friends or strangers.  If you as the server owner wish to enable or disable these features, you can configure them in the plugin config.
 * Players can set their personal game difficulty, which affects the damage taken from mobs:
   * Easy: 30% less damage
   * Normal (default): No modifier
@@ -75,7 +75,8 @@ These features are useful if you plan to play with friends or strangers.  If you
 * Players can toggle Keep Inventory, as well as what parts of their inventory are actually saved.  The categories are: Armor, Hotbar & Offhand, Inventory, and XP.
 * PvP is off by default but can be toggled on:
   * Only players who have turned PvP on can fight each other.  Note however that this may not prevent players from indirectly damaging each other.
-  * Combat tagging can be enabled in the config.  This prevents players from toggling PvP off for 30 seconds after they are involved in combat.  Logging out during this time will result in automatic player death.
+  * Combat tagging can be enabled in the config.  This prevents players from toggling PvP off or teleporting for 30 seconds after they are involved in combat.  Logging out during this time will result in automatic player death.
+* Players may teleport to their spawn point by using the command /home and standing still for 5 seconds.  This is useful in case players get stuck in no-build areas.
 * A server currency, backed by diamonds, is introduced:
   * 1 diamond exchanges for $100.
   * Players can withdraw banknotes as physical items to make transactions.
@@ -83,7 +84,7 @@ These features are useful if you plan to play with friends or strangers.  If you
   * As of now, the primary function of teams is to enable/disable PvP between teammates and to control claim permissions.
 * Players can now claim chunks to protect their builds from other players.
   * As of now, only the Overworld can be claimed.
-  * This plugin uses a system of "outposts" and "claims" where outposts are more expensive but can be placed anywhere, and claims are cheaper but must be connected to an outpost.  
+  * This plugin uses a system of "outposts" and "claims" where outposts are more expensive but can be placed anywhere, and claims are cheaper but must be connected to an outpost.
   * This makes it easier to claim a large contiguous amount of land for a large build while discouraging players from scattering random claims all across the world.
   * Players start with 1 outpost and 24 claims, and can buy more for $100 per claim and $1000 per outpost.  The maximum number of outposts a player can own is 21.
   * Within a claim, the owner can configure permissions for teammates and other players.  For instance, they can prevent other players from breaking blocks, opening chests, or opening doors.
