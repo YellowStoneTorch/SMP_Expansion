@@ -1,0 +1,7 @@
+name: SMP_Expansion
+version: '0.1.0-ALPHA'
+main: io.github.YellowStoneTorch.SMP_Expansion.SMP_Expansion
+api-version: '26.2'
+authors: [ YellowStoneTorch ]
+description: Plugin that enables SMP Expansion features
+bootstrapper: io.github.YellowStoneTorch.SMP_Expansion.Bootstrapper

@@ -1,0 +1,9 @@
+{
+    "pack": {
+        "description": {
+            "translate": "Data pack to enable custom enchantments for SMP Expansion"
+        },
+        "min_format": 107.1,
+        "max_format": 107.1
+    }
+}
