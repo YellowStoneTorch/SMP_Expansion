@@ -5,7 +5,7 @@ import org.bukkit.NamespacedKey;
 /**
  * Class for data namespacedkeys
  * @author YellowStoneTorch
- * @version 0.1.0-ALPHA
+ * @version 0.1.1-ALPHA
  */
 public class CustomData {
 	public static final NamespacedKey aquaAffinity = new NamespacedKey(SMP_Expansion.getPlugin(), "aquaAffinity");
@@ -31,6 +31,7 @@ public class CustomData {
 	public static final NamespacedKey infinity = new NamespacedKey(SMP_Expansion.getPlugin(), "infinity");
 	public static final NamespacedKey isCustom = new NamespacedKey(SMP_Expansion.getPlugin(), "isCustom");
 	public static final NamespacedKey itemLevel = new NamespacedKey(SMP_Expansion.getPlugin(), "itemLevel");
+	public static final NamespacedKey itemVersion = new NamespacedKey(SMP_Expansion.getPlugin(), "itemVersion");
 	public static final NamespacedKey keepInvArmor = new NamespacedKey(SMP_Expansion.getPlugin(), "keepInvArmor");
 	public static final NamespacedKey keepInvHotbar = new NamespacedKey(SMP_Expansion.getPlugin(), "keepInvHotbar");
 	public static final NamespacedKey keepInvInventory = new NamespacedKey(SMP_Expansion.getPlugin(), "keepInvInventory");

@@ -35,7 +35,7 @@ import static net.kyori.adventure.text.Component.text;
 /**
  * Holds methods for converting vanilla items into custom items
  * @author YellowStoneTorch
- * @version 0.1.0-ALPHA
+ * @version 0.1.1-ALPHA
  */
 @SuppressWarnings("UnstableApiUsage")
 public class ItemManager {
@@ -1474,6 +1474,7 @@ public class ItemManager {
 		attributes.put(Attribute.ATTACK_DAMAGE, new AttributeModifier(attributeDamage, 3, AttributeModifier.Operation.ADD_NUMBER, EquipmentSlotGroup.MAINHAND));
 		attributes.put(Attribute.ATTACK_SPEED, new AttributeModifier(attributeAttackSpeed, -2.4, AttributeModifier.Operation.ADD_NUMBER, EquipmentSlotGroup.MAINHAND));
 		dataP.set(isCustom, PersistentDataType.BOOLEAN, true);
+		dataP.set(itemVersion, PersistentDataType.INTEGER, 0);
 		dataP.set(equipmentType, PersistentDataType.STRING, "SWORD");
 		data.setDamage(damage);
 		data.lore(getSwordLore(sword));
@@ -1500,6 +1501,7 @@ public class ItemManager {
 		attributes.put(Attribute.ATTACK_DAMAGE, new AttributeModifier(attributeDamage, 4, AttributeModifier.Operation.ADD_NUMBER, EquipmentSlotGroup.MAINHAND));
 		attributes.put(Attribute.ATTACK_SPEED, new AttributeModifier(attributeAttackSpeed, -2.4, AttributeModifier.Operation.ADD_NUMBER, EquipmentSlotGroup.MAINHAND));
 		dataP.set(isCustom, PersistentDataType.BOOLEAN, true);
+		dataP.set(itemVersion, PersistentDataType.INTEGER, 0);
 		dataP.set(equipmentType, PersistentDataType.STRING, "SWORD");
 		data.setDamage(damage);
 		data.lore(getSwordLore(sword));
@@ -1526,6 +1528,7 @@ public class ItemManager {
 		attributes.put(Attribute.ATTACK_DAMAGE, new AttributeModifier(attributeDamage, 4.5, AttributeModifier.Operation.ADD_NUMBER, EquipmentSlotGroup.MAINHAND));
 		attributes.put(Attribute.ATTACK_SPEED, new AttributeModifier(attributeAttackSpeed, -2.4, AttributeModifier.Operation.ADD_NUMBER, EquipmentSlotGroup.MAINHAND));
 		dataP.set(isCustom, PersistentDataType.BOOLEAN, true);
+		dataP.set(itemVersion, PersistentDataType.INTEGER, 0);
 		dataP.set(equipmentType, PersistentDataType.STRING, "SWORD");
 		data.setDamage(damage);
 		sword.setItemMeta(data);
@@ -1553,6 +1556,7 @@ public class ItemManager {
 		attributes.put(Attribute.ATTACK_DAMAGE, new AttributeModifier(attributeDamage, 5.0, AttributeModifier.Operation.ADD_NUMBER, EquipmentSlotGroup.MAINHAND));
 		attributes.put(Attribute.ATTACK_SPEED, new AttributeModifier(attributeAttackSpeed, -2.4, AttributeModifier.Operation.ADD_NUMBER, EquipmentSlotGroup.MAINHAND));
 		dataP.set(isCustom, PersistentDataType.BOOLEAN, true);
+		dataP.set(itemVersion, PersistentDataType.INTEGER, 0);
 		dataP.set(equipmentType, PersistentDataType.STRING, "SWORD");
 		data.setDamage(damage);
 		sword.setItemMeta(data);
@@ -1580,6 +1584,7 @@ public class ItemManager {
 		attributes.put(Attribute.ATTACK_DAMAGE, new AttributeModifier(attributeDamage, 5.0, AttributeModifier.Operation.ADD_NUMBER, EquipmentSlotGroup.MAINHAND));
 		attributes.put(Attribute.ATTACK_SPEED, new AttributeModifier(attributeAttackSpeed, -2.4, AttributeModifier.Operation.ADD_NUMBER, EquipmentSlotGroup.MAINHAND));
 		dataP.set(isCustom, PersistentDataType.BOOLEAN, true);
+		dataP.set(itemVersion, PersistentDataType.INTEGER, 0);
 		dataP.set(equipmentType, PersistentDataType.STRING, "GOLDEN_SWORD");
 		data.setDamage(damage);
 		data.setMaxDamage(120);
@@ -1608,6 +1613,7 @@ public class ItemManager {
 		attributes.put(Attribute.ATTACK_DAMAGE, new AttributeModifier(attributeDamage, 6.0, AttributeModifier.Operation.ADD_NUMBER, EquipmentSlotGroup.MAINHAND));
 		attributes.put(Attribute.ATTACK_SPEED, new AttributeModifier(attributeAttackSpeed, -2.4, AttributeModifier.Operation.ADD_NUMBER, EquipmentSlotGroup.MAINHAND));
 		dataP.set(isCustom, PersistentDataType.BOOLEAN, true);
+		dataP.set(itemVersion, PersistentDataType.INTEGER, 0);
 		dataP.set(equipmentType, PersistentDataType.STRING, "SWORD");
 		data.setDamage(damage);
 		sword.setItemMeta(data);
@@ -1636,6 +1642,7 @@ public class ItemManager {
 		attributes.put(Attribute.ATTACK_DAMAGE, new AttributeModifier(attributeDamage, 6.75 + (0.25 * level), AttributeModifier.Operation.ADD_NUMBER, EquipmentSlotGroup.MAINHAND));
 		attributes.put(Attribute.ATTACK_SPEED, new AttributeModifier(attributeAttackSpeed, -2.4, AttributeModifier.Operation.ADD_NUMBER, EquipmentSlotGroup.MAINHAND));
 		dataP.set(isCustom, PersistentDataType.BOOLEAN, true);
+		dataP.set(itemVersion, PersistentDataType.INTEGER, 0);
 		dataP.set(equipmentType, PersistentDataType.STRING, "SWORD");
 		dataP.set(itemLevel, PersistentDataType.INTEGER, level);
 		data.setDamage(damage);
@@ -1661,12 +1668,13 @@ public class ItemManager {
 		ItemStack spear = ItemStack.of(Material.WOODEN_SPEAR, 1);
 		Damageable data = (Damageable)spear.getItemMeta();
 		PersistentDataContainer dataP = data.getPersistentDataContainer();
-		dataP.set(isCustom, PersistentDataType.BOOLEAN, true);
-		dataP.set(equipmentType, PersistentDataType.STRING, "SPEAR");
 		ArrayListMultimap<Attribute, AttributeModifier> attributes = ArrayListMultimap.create();
 		attributes.put(Attribute.ATTACK_DAMAGE, new AttributeModifier(attributeDamage, 1, AttributeModifier.Operation.ADD_NUMBER, EquipmentSlotGroup.MAINHAND));
 		attributes.put(Attribute.ATTACK_SPEED, new AttributeModifier(attributeAttackSpeed, -2.46, AttributeModifier.Operation.ADD_NUMBER, EquipmentSlotGroup.MAINHAND));
 		data.setAttributeModifiers(attributes);
+		dataP.set(isCustom, PersistentDataType.BOOLEAN, true);
+		dataP.set(itemVersion, PersistentDataType.INTEGER, 0);
+		dataP.set(equipmentType, PersistentDataType.STRING, "SPEAR");
 		data.setDamage(damage);
 		data.addItemFlags(ItemFlag.HIDE_ATTRIBUTES, ItemFlag.HIDE_ENCHANTS);
 		KineticWeapon.Builder kineticWeapon = KineticWeapon.kineticWeapon();
@@ -1697,12 +1705,13 @@ public class ItemManager {
 		ItemStack spear = ItemStack.of(Material.STONE_SPEAR, 1);
 		Damageable data = (Damageable)spear.getItemMeta();
 		PersistentDataContainer dataP = data.getPersistentDataContainer();
-		dataP.set(isCustom, PersistentDataType.BOOLEAN, true);
-		dataP.set(equipmentType, PersistentDataType.STRING, "SPEAR");
 		ArrayListMultimap<Attribute, AttributeModifier> attributes = ArrayListMultimap.create();
 		attributes.put(Attribute.ATTACK_DAMAGE, new AttributeModifier(attributeDamage, 2, AttributeModifier.Operation.ADD_NUMBER, EquipmentSlotGroup.MAINHAND));
 		attributes.put(Attribute.ATTACK_SPEED, new AttributeModifier(attributeAttackSpeed, -2.67, AttributeModifier.Operation.ADD_NUMBER, EquipmentSlotGroup.MAINHAND));
 		data.setAttributeModifiers(attributes);
+		dataP.set(isCustom, PersistentDataType.BOOLEAN, true);
+		dataP.set(itemVersion, PersistentDataType.INTEGER, 0);
+		dataP.set(equipmentType, PersistentDataType.STRING, "SPEAR");
 		data.setDamage(damage);
 		data.addItemFlags(ItemFlag.HIDE_ATTRIBUTES, ItemFlag.HIDE_ENCHANTS);
 		KineticWeapon.Builder kineticWeapon = KineticWeapon.kineticWeapon();
@@ -1733,12 +1742,13 @@ public class ItemManager {
 		ItemStack spear = ItemStack.of(Material.COPPER_SPEAR, 1);
 		Damageable data = (Damageable)spear.getItemMeta();
 		PersistentDataContainer dataP = data.getPersistentDataContainer();
-		dataP.set(isCustom, PersistentDataType.BOOLEAN, true);
-		dataP.set(equipmentType, PersistentDataType.STRING, "SPEAR");
 		ArrayListMultimap<Attribute, AttributeModifier> attributes = ArrayListMultimap.create();
 		attributes.put(Attribute.ATTACK_DAMAGE, new AttributeModifier(attributeDamage, 2.5, AttributeModifier.Operation.ADD_NUMBER, EquipmentSlotGroup.MAINHAND));
 		attributes.put(Attribute.ATTACK_SPEED, new AttributeModifier(attributeAttackSpeed, -2.82, AttributeModifier.Operation.ADD_NUMBER, EquipmentSlotGroup.MAINHAND));
 		data.setAttributeModifiers(attributes);
+		dataP.set(isCustom, PersistentDataType.BOOLEAN, true);
+		dataP.set(itemVersion, PersistentDataType.INTEGER, 0);
+		dataP.set(equipmentType, PersistentDataType.STRING, "SPEAR");
 		data.setDamage(damage);
 		data.addItemFlags(ItemFlag.HIDE_ATTRIBUTES, ItemFlag.HIDE_ENCHANTS);
 		KineticWeapon.Builder kineticWeapon = KineticWeapon.kineticWeapon();
@@ -1769,12 +1779,13 @@ public class ItemManager {
 		ItemStack spear = ItemStack.of(Material.IRON_SPEAR, 1);
 		Damageable data = (Damageable)spear.getItemMeta();
 		PersistentDataContainer dataP = data.getPersistentDataContainer();
-		dataP.set(isCustom, PersistentDataType.BOOLEAN, true);
-		dataP.set(equipmentType, PersistentDataType.STRING, "SPEAR");
 		ArrayListMultimap<Attribute, AttributeModifier> attributes = ArrayListMultimap.create();
 		attributes.put(Attribute.ATTACK_DAMAGE, new AttributeModifier(attributeDamage, 3, AttributeModifier.Operation.ADD_NUMBER, EquipmentSlotGroup.MAINHAND));
 		attributes.put(Attribute.ATTACK_SPEED, new AttributeModifier(attributeAttackSpeed, -2.95, AttributeModifier.Operation.ADD_NUMBER, EquipmentSlotGroup.MAINHAND));
 		data.setAttributeModifiers(attributes);
+		dataP.set(isCustom, PersistentDataType.BOOLEAN, true);
+		dataP.set(itemVersion, PersistentDataType.INTEGER, 0);
+		dataP.set(equipmentType, PersistentDataType.STRING, "SPEAR");
 		data.setDamage(damage);
 		data.addItemFlags(ItemFlag.HIDE_ATTRIBUTES, ItemFlag.HIDE_ENCHANTS);
 		KineticWeapon.Builder kineticWeapon = KineticWeapon.kineticWeapon();
@@ -1805,12 +1816,13 @@ public class ItemManager {
 		ItemStack spear = ItemStack.of(Material.GOLDEN_SPEAR, 1);
 		Damageable data = (Damageable)spear.getItemMeta();
 		PersistentDataContainer dataP = data.getPersistentDataContainer();
-		dataP.set(isCustom, PersistentDataType.BOOLEAN, true);
-		dataP.set(equipmentType, PersistentDataType.STRING, "GOLDEN_SPEAR");
 		ArrayListMultimap<Attribute, AttributeModifier> attributes = ArrayListMultimap.create();
 		attributes.put(Attribute.ATTACK_DAMAGE, new AttributeModifier(attributeDamage, 3, AttributeModifier.Operation.ADD_NUMBER, EquipmentSlotGroup.MAINHAND));
 		attributes.put(Attribute.ATTACK_SPEED, new AttributeModifier(attributeAttackSpeed, -2.95, AttributeModifier.Operation.ADD_NUMBER, EquipmentSlotGroup.MAINHAND));
 		data.setAttributeModifiers(attributes);
+		dataP.set(isCustom, PersistentDataType.BOOLEAN, true);
+		dataP.set(itemVersion, PersistentDataType.INTEGER, 0);
+		dataP.set(equipmentType, PersistentDataType.STRING, "GOLDEN_SPEAR");
 		data.setDamage(damage);
 		data.setMaxDamage(120);
 		data.addItemFlags(ItemFlag.HIDE_ATTRIBUTES, ItemFlag.HIDE_ENCHANTS);
@@ -1842,12 +1854,13 @@ public class ItemManager {
 		ItemStack spear = ItemStack.of(Material.DIAMOND_SPEAR, 1);
 		Damageable data = (Damageable)spear.getItemMeta();
 		PersistentDataContainer dataP = data.getPersistentDataContainer();
-		dataP.set(isCustom, PersistentDataType.BOOLEAN, true);
-		dataP.set(equipmentType, PersistentDataType.STRING, "SPEAR");
 		ArrayListMultimap<Attribute, AttributeModifier> attributes = ArrayListMultimap.create();
 		attributes.put(Attribute.ATTACK_DAMAGE, new AttributeModifier(attributeDamage, 4, AttributeModifier.Operation.ADD_NUMBER, EquipmentSlotGroup.MAINHAND));
 		attributes.put(Attribute.ATTACK_SPEED, new AttributeModifier(attributeAttackSpeed, -3.05, AttributeModifier.Operation.ADD_NUMBER, EquipmentSlotGroup.MAINHAND));
 		data.setAttributeModifiers(attributes);
+		dataP.set(isCustom, PersistentDataType.BOOLEAN, true);
+		dataP.set(itemVersion, PersistentDataType.INTEGER, 0);
+		dataP.set(equipmentType, PersistentDataType.STRING, "SPEAR");
 		data.setDamage(damage);
 		data.addItemFlags(ItemFlag.HIDE_ATTRIBUTES, ItemFlag.HIDE_ENCHANTS);
 		KineticWeapon.Builder kineticWeapon = KineticWeapon.kineticWeapon();
@@ -1879,13 +1892,14 @@ public class ItemManager {
 		ItemStack spear = ItemStack.of(Material.NETHERITE_SPEAR, 1);
 		Damageable data = (Damageable)spear.getItemMeta();
 		PersistentDataContainer dataP = data.getPersistentDataContainer();
-		dataP.set(isCustom, PersistentDataType.BOOLEAN, true);
-		dataP.set(equipmentType, PersistentDataType.STRING, "SPEAR");
-		dataP.set(itemLevel, PersistentDataType.INTEGER, level);
 		ArrayListMultimap<Attribute, AttributeModifier> attributes = ArrayListMultimap.create();
 		attributes.put(Attribute.ATTACK_DAMAGE, new AttributeModifier(attributeDamage, 4.75 + (0.25 * level), AttributeModifier.Operation.ADD_NUMBER, EquipmentSlotGroup.MAINHAND));
 		attributes.put(Attribute.ATTACK_SPEED, new AttributeModifier(attributeAttackSpeed, -3.13, AttributeModifier.Operation.ADD_NUMBER, EquipmentSlotGroup.MAINHAND));
 		data.setAttributeModifiers(attributes);
+		dataP.set(isCustom, PersistentDataType.BOOLEAN, true);
+		dataP.set(itemVersion, PersistentDataType.INTEGER, 0);
+		dataP.set(equipmentType, PersistentDataType.STRING, "SPEAR");
+		dataP.set(itemLevel, PersistentDataType.INTEGER, level);
 		data.setDamage(damage);
 		data.setMaxDamage(2000 + (100 * level));
 		data.addItemFlags(ItemFlag.HIDE_ATTRIBUTES, ItemFlag.HIDE_ENCHANTS);
@@ -1921,6 +1935,7 @@ public class ItemManager {
 		attributes.put(Attribute.ATTACK_DAMAGE, new AttributeModifier(attributeDamage, 6, AttributeModifier.Operation.ADD_NUMBER, EquipmentSlotGroup.MAINHAND));
 		attributes.put(Attribute.ATTACK_SPEED, new AttributeModifier(attributeAttackSpeed, -3.0, AttributeModifier.Operation.ADD_NUMBER, EquipmentSlotGroup.MAINHAND));
 		dataP.set(isCustom, PersistentDataType.BOOLEAN, true);
+		dataP.set(itemVersion, PersistentDataType.INTEGER, 0);
 		dataP.set(equipmentType, PersistentDataType.STRING, "AXE");
 		data.setDamage(damage);
 		data.lore(getAxeLore(axe));
@@ -1947,6 +1962,7 @@ public class ItemManager {
 		attributes.put(Attribute.ATTACK_DAMAGE, new AttributeModifier(attributeDamage, 7, AttributeModifier.Operation.ADD_NUMBER, EquipmentSlotGroup.MAINHAND));
 		attributes.put(Attribute.ATTACK_SPEED, new AttributeModifier(attributeAttackSpeed, -3.0, AttributeModifier.Operation.ADD_NUMBER, EquipmentSlotGroup.MAINHAND));
 		dataP.set(isCustom, PersistentDataType.BOOLEAN, true);
+		dataP.set(itemVersion, PersistentDataType.INTEGER, 0);
 		dataP.set(equipmentType, PersistentDataType.STRING, "AXE");
 		data.setDamage(damage);
 		data.lore(getAxeLore(axe));
@@ -1973,6 +1989,7 @@ public class ItemManager {
 		attributes.put(Attribute.ATTACK_DAMAGE, new AttributeModifier(attributeDamage, 7.5, AttributeModifier.Operation.ADD_NUMBER, EquipmentSlotGroup.MAINHAND));
 		attributes.put(Attribute.ATTACK_SPEED, new AttributeModifier(attributeAttackSpeed, -3.0, AttributeModifier.Operation.ADD_NUMBER, EquipmentSlotGroup.MAINHAND));
 		dataP.set(isCustom, PersistentDataType.BOOLEAN, true);
+		dataP.set(itemVersion, PersistentDataType.INTEGER, 0);
 		dataP.set(equipmentType, PersistentDataType.STRING, "AXE");
 		data.setDamage(damage);
 		axe.setItemMeta(data);
@@ -2000,6 +2017,7 @@ public class ItemManager {
 		attributes.put(Attribute.ATTACK_DAMAGE, new AttributeModifier(attributeDamage, 8.0, AttributeModifier.Operation.ADD_NUMBER, EquipmentSlotGroup.MAINHAND));
 		attributes.put(Attribute.ATTACK_SPEED, new AttributeModifier(attributeAttackSpeed, -3.0, AttributeModifier.Operation.ADD_NUMBER, EquipmentSlotGroup.MAINHAND));
 		dataP.set(isCustom, PersistentDataType.BOOLEAN, true);
+		dataP.set(itemVersion, PersistentDataType.INTEGER, 0);
 		dataP.set(equipmentType, PersistentDataType.STRING, "AXE");
 		data.setDamage(damage);
 		axe.setItemMeta(data);
@@ -2027,6 +2045,7 @@ public class ItemManager {
 		attributes.put(Attribute.ATTACK_DAMAGE, new AttributeModifier(attributeDamage, 8.0, AttributeModifier.Operation.ADD_NUMBER, EquipmentSlotGroup.MAINHAND));
 		attributes.put(Attribute.ATTACK_SPEED, new AttributeModifier(attributeAttackSpeed, -3.0, AttributeModifier.Operation.ADD_NUMBER, EquipmentSlotGroup.MAINHAND));
 		dataP.set(isCustom, PersistentDataType.BOOLEAN, true);
+		dataP.set(itemVersion, PersistentDataType.INTEGER, 0);
 		dataP.set(equipmentType, PersistentDataType.STRING, "GOLDEN_AXE");
 		data.setDamage(damage);
 		data.setMaxDamage(120);
@@ -2055,6 +2074,7 @@ public class ItemManager {
 		attributes.put(Attribute.ATTACK_DAMAGE, new AttributeModifier(attributeDamage, 8.0, AttributeModifier.Operation.ADD_NUMBER, EquipmentSlotGroup.MAINHAND));
 		attributes.put(Attribute.ATTACK_SPEED, new AttributeModifier(attributeAttackSpeed, -3.0, AttributeModifier.Operation.ADD_NUMBER, EquipmentSlotGroup.MAINHAND));
 		dataP.set(isCustom, PersistentDataType.BOOLEAN, true);
+		dataP.set(itemVersion, PersistentDataType.INTEGER, 0);
 		dataP.set(equipmentType, PersistentDataType.STRING, "AXE");
 		data.setDamage(damage);
 		axe.setItemMeta(data);
@@ -2083,6 +2103,7 @@ public class ItemManager {
 		attributes.put(Attribute.ATTACK_DAMAGE, new AttributeModifier(attributeDamage, 8.75 + (0.25 * level), AttributeModifier.Operation.ADD_NUMBER, EquipmentSlotGroup.MAINHAND));
 		attributes.put(Attribute.ATTACK_SPEED, new AttributeModifier(attributeAttackSpeed, -3.0, AttributeModifier.Operation.ADD_NUMBER, EquipmentSlotGroup.MAINHAND));
 		dataP.set(isCustom, PersistentDataType.BOOLEAN, true);
+		dataP.set(itemVersion, PersistentDataType.INTEGER, 0);
 		dataP.set(equipmentType, PersistentDataType.STRING, "AXE");
 		dataP.set(itemLevel, PersistentDataType.INTEGER, level);
 		data.setDamage(damage);
@@ -2112,6 +2133,7 @@ public class ItemManager {
 		attributes.put(Attribute.ATTACK_DAMAGE, new AttributeModifier(attributeDamage, 1, AttributeModifier.Operation.ADD_NUMBER, EquipmentSlotGroup.MAINHAND));
 		attributes.put(Attribute.ATTACK_SPEED, new AttributeModifier(attributeAttackSpeed, -2.8, AttributeModifier.Operation.ADD_NUMBER, EquipmentSlotGroup.MAINHAND));
 		dataP.set(isCustom, PersistentDataType.BOOLEAN, true);
+		dataP.set(itemVersion, PersistentDataType.INTEGER, 0);
 		dataP.set(equipmentType, PersistentDataType.STRING, "PICKAXE");
 		data.setDamage(damage);
 		data.lore(getPickaxeLore(pickaxe));
@@ -2138,6 +2160,7 @@ public class ItemManager {
 		attributes.put(Attribute.ATTACK_DAMAGE, new AttributeModifier(attributeDamage, 2, AttributeModifier.Operation.ADD_NUMBER, EquipmentSlotGroup.MAINHAND));
 		attributes.put(Attribute.ATTACK_SPEED, new AttributeModifier(attributeAttackSpeed, -2.8, AttributeModifier.Operation.ADD_NUMBER, EquipmentSlotGroup.MAINHAND));
 		dataP.set(isCustom, PersistentDataType.BOOLEAN, true);
+		dataP.set(itemVersion, PersistentDataType.INTEGER, 0);
 		dataP.set(equipmentType, PersistentDataType.STRING, "PICKAXE");
 		data.setDamage(damage);
 		data.lore(getPickaxeLore(pickaxe));
@@ -2164,6 +2187,7 @@ public class ItemManager {
 		attributes.put(Attribute.ATTACK_DAMAGE, new AttributeModifier(attributeDamage, 2.5, AttributeModifier.Operation.ADD_NUMBER, EquipmentSlotGroup.MAINHAND));
 		attributes.put(Attribute.ATTACK_SPEED, new AttributeModifier(attributeAttackSpeed, -2.8, AttributeModifier.Operation.ADD_NUMBER, EquipmentSlotGroup.MAINHAND));
 		dataP.set(isCustom, PersistentDataType.BOOLEAN, true);
+		dataP.set(itemVersion, PersistentDataType.INTEGER, 0);
 		dataP.set(equipmentType, PersistentDataType.STRING, "PICKAXE");
 		data.setDamage(damage);
 		ToolComponent tool = data.getTool();
@@ -2197,6 +2221,7 @@ public class ItemManager {
 		attributes.put(Attribute.ATTACK_DAMAGE, new AttributeModifier(attributeDamage, 3.0, AttributeModifier.Operation.ADD_NUMBER, EquipmentSlotGroup.MAINHAND));
 		attributes.put(Attribute.ATTACK_SPEED, new AttributeModifier(attributeAttackSpeed, -2.8, AttributeModifier.Operation.ADD_NUMBER, EquipmentSlotGroup.MAINHAND));
 		dataP.set(isCustom, PersistentDataType.BOOLEAN, true);
+		dataP.set(itemVersion, PersistentDataType.INTEGER, 0);
 		dataP.set(equipmentType, PersistentDataType.STRING, "PICKAXE");
 		data.setDamage(damage);
 		pickaxe.setItemMeta(data);
@@ -2224,6 +2249,7 @@ public class ItemManager {
 		attributes.put(Attribute.ATTACK_DAMAGE, new AttributeModifier(attributeDamage, 3.0, AttributeModifier.Operation.ADD_NUMBER, EquipmentSlotGroup.MAINHAND));
 		attributes.put(Attribute.ATTACK_SPEED, new AttributeModifier(attributeAttackSpeed, -2.8, AttributeModifier.Operation.ADD_NUMBER, EquipmentSlotGroup.MAINHAND));
 		dataP.set(isCustom, PersistentDataType.BOOLEAN, true);
+		dataP.set(itemVersion, PersistentDataType.INTEGER, 0);
 		dataP.set(equipmentType, PersistentDataType.STRING, "GOLDEN_PICKAXE");
 		data.setDamage(damage);
 		data.setMaxDamage(120);
@@ -2258,6 +2284,7 @@ public class ItemManager {
 		attributes.put(Attribute.ATTACK_DAMAGE, new AttributeModifier(attributeDamage, 4.0, AttributeModifier.Operation.ADD_NUMBER, EquipmentSlotGroup.MAINHAND));
 		attributes.put(Attribute.ATTACK_SPEED, new AttributeModifier(attributeAttackSpeed, -2.8, AttributeModifier.Operation.ADD_NUMBER, EquipmentSlotGroup.MAINHAND));
 		dataP.set(isCustom, PersistentDataType.BOOLEAN, true);
+		dataP.set(itemVersion, PersistentDataType.INTEGER, 0);
 		dataP.set(equipmentType, PersistentDataType.STRING, "PICKAXE");
 		data.setDamage(damage);
 		pickaxe.setItemMeta(data);
@@ -2285,6 +2312,7 @@ public class ItemManager {
 		attributes.put(Attribute.ATTACK_DAMAGE, new AttributeModifier(attributeDamage, 5.0, AttributeModifier.Operation.ADD_NUMBER, EquipmentSlotGroup.MAINHAND));
 		attributes.put(Attribute.ATTACK_SPEED, new AttributeModifier(attributeAttackSpeed, -2.8, AttributeModifier.Operation.ADD_NUMBER, EquipmentSlotGroup.MAINHAND));
 		dataP.set(isCustom, PersistentDataType.BOOLEAN, true);
+		dataP.set(itemVersion, PersistentDataType.INTEGER, 0);
 		dataP.set(equipmentType, PersistentDataType.STRING, "PICKAXE");
 		data.setDamage(damage);
 		data.setMaxDamage(2100);
@@ -2313,6 +2341,7 @@ public class ItemManager {
 		attributes.put(Attribute.ATTACK_DAMAGE, new AttributeModifier(attributeDamage, 1.5, AttributeModifier.Operation.ADD_NUMBER, EquipmentSlotGroup.MAINHAND));
 		attributes.put(Attribute.ATTACK_SPEED, new AttributeModifier(attributeAttackSpeed, -3.0, AttributeModifier.Operation.ADD_NUMBER, EquipmentSlotGroup.MAINHAND));
 		dataP.set(isCustom, PersistentDataType.BOOLEAN, true);
+		dataP.set(itemVersion, PersistentDataType.INTEGER, 0);
 		dataP.set(equipmentType, PersistentDataType.STRING, "SHOVEL");
 		data.setDamage(damage);
 		data.lore(getShovelLore(shovel));
@@ -2339,6 +2368,7 @@ public class ItemManager {
 		attributes.put(Attribute.ATTACK_DAMAGE, new AttributeModifier(attributeDamage, 2.5, AttributeModifier.Operation.ADD_NUMBER, EquipmentSlotGroup.MAINHAND));
 		attributes.put(Attribute.ATTACK_SPEED, new AttributeModifier(attributeAttackSpeed, -3.0, AttributeModifier.Operation.ADD_NUMBER, EquipmentSlotGroup.MAINHAND));
 		dataP.set(isCustom, PersistentDataType.BOOLEAN, true);
+		dataP.set(itemVersion, PersistentDataType.INTEGER, 0);
 		dataP.set(equipmentType, PersistentDataType.STRING, "SHOVEL");
 		data.setDamage(damage);
 		data.lore(getShovelLore(shovel));
@@ -2365,6 +2395,7 @@ public class ItemManager {
 		attributes.put(Attribute.ATTACK_DAMAGE, new AttributeModifier(attributeDamage, 3.0, AttributeModifier.Operation.ADD_NUMBER, EquipmentSlotGroup.MAINHAND));
 		attributes.put(Attribute.ATTACK_SPEED, new AttributeModifier(attributeAttackSpeed, -3.0, AttributeModifier.Operation.ADD_NUMBER, EquipmentSlotGroup.MAINHAND));
 		dataP.set(isCustom, PersistentDataType.BOOLEAN, true);
+		dataP.set(itemVersion, PersistentDataType.INTEGER, 0);
 		dataP.set(equipmentType, PersistentDataType.STRING, "SHOVEL");
 		data.setDamage(damage);
 		shovel.setItemMeta(data);
@@ -2392,6 +2423,7 @@ public class ItemManager {
 		attributes.put(Attribute.ATTACK_DAMAGE, new AttributeModifier(attributeDamage, 3.5, AttributeModifier.Operation.ADD_NUMBER, EquipmentSlotGroup.MAINHAND));
 		attributes.put(Attribute.ATTACK_SPEED, new AttributeModifier(attributeAttackSpeed, -3.0, AttributeModifier.Operation.ADD_NUMBER, EquipmentSlotGroup.MAINHAND));
 		dataP.set(isCustom, PersistentDataType.BOOLEAN, true);
+		dataP.set(itemVersion, PersistentDataType.INTEGER, 0);
 		dataP.set(equipmentType, PersistentDataType.STRING, "SHOVEL");
 		data.setDamage(damage);
 		shovel.setItemMeta(data);
@@ -2419,6 +2451,7 @@ public class ItemManager {
 		attributes.put(Attribute.ATTACK_DAMAGE, new AttributeModifier(attributeDamage, 3.5, AttributeModifier.Operation.ADD_NUMBER, EquipmentSlotGroup.MAINHAND));
 		attributes.put(Attribute.ATTACK_SPEED, new AttributeModifier(attributeAttackSpeed, -3.0, AttributeModifier.Operation.ADD_NUMBER, EquipmentSlotGroup.MAINHAND));
 		dataP.set(isCustom, PersistentDataType.BOOLEAN, true);
+		dataP.set(itemVersion, PersistentDataType.INTEGER, 0);
 		dataP.set(equipmentType, PersistentDataType.STRING, "GOLDEN_SHOVEL");
 		data.setDamage(damage);
 		data.setMaxDamage(120);
@@ -2447,6 +2480,7 @@ public class ItemManager {
 		attributes.put(Attribute.ATTACK_DAMAGE, new AttributeModifier(attributeDamage, 4.5, AttributeModifier.Operation.ADD_NUMBER, EquipmentSlotGroup.MAINHAND));
 		attributes.put(Attribute.ATTACK_SPEED, new AttributeModifier(attributeAttackSpeed, -3.0, AttributeModifier.Operation.ADD_NUMBER, EquipmentSlotGroup.MAINHAND));
 		dataP.set(isCustom, PersistentDataType.BOOLEAN, true);
+		dataP.set(itemVersion, PersistentDataType.INTEGER, 0);
 		dataP.set(equipmentType, PersistentDataType.STRING, "SHOVEL");
 		data.setDamage(damage);
 		shovel.setItemMeta(data);
@@ -2474,6 +2508,7 @@ public class ItemManager {
 		attributes.put(Attribute.ATTACK_DAMAGE, new AttributeModifier(attributeDamage, 5.5, AttributeModifier.Operation.ADD_NUMBER, EquipmentSlotGroup.MAINHAND));
 		attributes.put(Attribute.ATTACK_SPEED, new AttributeModifier(attributeAttackSpeed, -3.0, AttributeModifier.Operation.ADD_NUMBER, EquipmentSlotGroup.MAINHAND));
 		dataP.set(isCustom, PersistentDataType.BOOLEAN, true);
+		dataP.set(itemVersion, PersistentDataType.INTEGER, 0);
 		dataP.set(equipmentType, PersistentDataType.STRING, "SHOVEL");
 		data.setDamage(damage);
 		data.setMaxDamage(2100);
@@ -2502,6 +2537,7 @@ public class ItemManager {
 		attributes.put(Attribute.ATTACK_DAMAGE, new AttributeModifier(attributeDamage, 2, AttributeModifier.Operation.ADD_NUMBER, EquipmentSlotGroup.MAINHAND));
 		attributes.put(Attribute.ATTACK_SPEED, new AttributeModifier(attributeAttackSpeed, -3.0, AttributeModifier.Operation.ADD_NUMBER, EquipmentSlotGroup.MAINHAND));
 		dataP.set(isCustom, PersistentDataType.BOOLEAN, true);
+		dataP.set(itemVersion, PersistentDataType.INTEGER, 0);
 		dataP.set(equipmentType, PersistentDataType.STRING, "HOE");
 		data.setDamage(damage);
 		data.lore(getHoeLore(hoe));
@@ -2528,6 +2564,7 @@ public class ItemManager {
 		attributes.put(Attribute.ATTACK_DAMAGE, new AttributeModifier(attributeDamage, 3, AttributeModifier.Operation.ADD_NUMBER, EquipmentSlotGroup.MAINHAND));
 		attributes.put(Attribute.ATTACK_SPEED, new AttributeModifier(attributeAttackSpeed, -3.0, AttributeModifier.Operation.ADD_NUMBER, EquipmentSlotGroup.MAINHAND));
 		dataP.set(isCustom, PersistentDataType.BOOLEAN, true);
+		dataP.set(itemVersion, PersistentDataType.INTEGER, 0);
 		dataP.set(equipmentType, PersistentDataType.STRING, "HOE");
 		data.setDamage(damage);
 		data.lore(getHoeLore(hoe));
@@ -2554,6 +2591,7 @@ public class ItemManager {
 		attributes.put(Attribute.ATTACK_DAMAGE, new AttributeModifier(attributeDamage, 3.5, AttributeModifier.Operation.ADD_NUMBER, EquipmentSlotGroup.MAINHAND));
 		attributes.put(Attribute.ATTACK_SPEED, new AttributeModifier(attributeAttackSpeed, -3.0, AttributeModifier.Operation.ADD_NUMBER, EquipmentSlotGroup.MAINHAND));
 		dataP.set(isCustom, PersistentDataType.BOOLEAN, true);
+		dataP.set(itemVersion, PersistentDataType.INTEGER, 0);
 		dataP.set(equipmentType, PersistentDataType.STRING, "HOE");
 		data.setDamage(damage);
 		hoe.setItemMeta(data);
@@ -2581,6 +2619,7 @@ public class ItemManager {
 		attributes.put(Attribute.ATTACK_DAMAGE, new AttributeModifier(attributeDamage, 4.0, AttributeModifier.Operation.ADD_NUMBER, EquipmentSlotGroup.MAINHAND));
 		attributes.put(Attribute.ATTACK_SPEED, new AttributeModifier(attributeAttackSpeed, -3.0, AttributeModifier.Operation.ADD_NUMBER, EquipmentSlotGroup.MAINHAND));
 		dataP.set(isCustom, PersistentDataType.BOOLEAN, true);
+		dataP.set(itemVersion, PersistentDataType.INTEGER, 0);
 		dataP.set(equipmentType, PersistentDataType.STRING, "HOE");
 		data.setDamage(damage);
 		hoe.setItemMeta(data);
@@ -2608,6 +2647,7 @@ public class ItemManager {
 		attributes.put(Attribute.ATTACK_DAMAGE, new AttributeModifier(attributeDamage, 4.0, AttributeModifier.Operation.ADD_NUMBER, EquipmentSlotGroup.MAINHAND));
 		attributes.put(Attribute.ATTACK_SPEED, new AttributeModifier(attributeAttackSpeed, -3.0, AttributeModifier.Operation.ADD_NUMBER, EquipmentSlotGroup.MAINHAND));
 		dataP.set(isCustom, PersistentDataType.BOOLEAN, true);
+		dataP.set(itemVersion, PersistentDataType.INTEGER, 0);
 		dataP.set(equipmentType, PersistentDataType.STRING, "GOLDEN_HOE");
 		data.setDamage(damage);
 		data.setMaxDamage(120);
@@ -2636,6 +2676,7 @@ public class ItemManager {
 		attributes.put(Attribute.ATTACK_DAMAGE, new AttributeModifier(attributeDamage, 5.0, AttributeModifier.Operation.ADD_NUMBER, EquipmentSlotGroup.MAINHAND));
 		attributes.put(Attribute.ATTACK_SPEED, new AttributeModifier(attributeAttackSpeed, -3.0, AttributeModifier.Operation.ADD_NUMBER, EquipmentSlotGroup.MAINHAND));
 		dataP.set(isCustom, PersistentDataType.BOOLEAN, true);
+		dataP.set(itemVersion, PersistentDataType.INTEGER, 0);
 		dataP.set(equipmentType, PersistentDataType.STRING, "HOE");
 		data.setDamage(damage);
 		hoe.setItemMeta(data);
@@ -2663,6 +2704,7 @@ public class ItemManager {
 		attributes.put(Attribute.ATTACK_DAMAGE, new AttributeModifier(attributeDamage, 6.0, AttributeModifier.Operation.ADD_NUMBER, EquipmentSlotGroup.MAINHAND));
 		attributes.put(Attribute.ATTACK_SPEED, new AttributeModifier(attributeAttackSpeed, -3.0, AttributeModifier.Operation.ADD_NUMBER, EquipmentSlotGroup.MAINHAND));
 		dataP.set(isCustom, PersistentDataType.BOOLEAN, true);
+		dataP.set(itemVersion, PersistentDataType.INTEGER, 0);
 		dataP.set(equipmentType, PersistentDataType.STRING, "HOE");
 		data.setDamage(damage);
 		data.setMaxDamage(2100);
@@ -2688,6 +2730,7 @@ public class ItemManager {
 		Damageable data = (Damageable)cap.getItemMeta();
 		PersistentDataContainer dataP = data.getPersistentDataContainer();
 		dataP.set(isCustom, PersistentDataType.BOOLEAN, true);
+		dataP.set(itemVersion, PersistentDataType.INTEGER, 0);
 		dataP.set(equipmentType, PersistentDataType.STRING, "HELMET");
 		data.setDamage(damage);
 		data.lore(getHelmetLore(cap));
@@ -2713,6 +2756,7 @@ public class ItemManager {
 		attributes.put(Attribute.ARMOR, new AttributeModifier(attributeArmorHead, 2, AttributeModifier.Operation.ADD_NUMBER, EquipmentSlotGroup.HEAD));
 		attributes.put(Attribute.ARMOR_TOUGHNESS, new AttributeModifier(attributeToughnessHead, 0.5, AttributeModifier.Operation.ADD_NUMBER, EquipmentSlotGroup.HEAD));
 		dataP.set(isCustom, PersistentDataType.BOOLEAN, true);
+		dataP.set(itemVersion, PersistentDataType.INTEGER, 0);
 		dataP.set(equipmentType, PersistentDataType.STRING, "HELMET");
 		data.setDamage(damage);
 		helmet.setItemMeta(data);
@@ -2740,6 +2784,7 @@ public class ItemManager {
 		attributes.put(Attribute.ARMOR, new AttributeModifier(attributeArmorHead, 2, AttributeModifier.Operation.ADD_NUMBER, EquipmentSlotGroup.HEAD));
 		attributes.put(Attribute.ARMOR_TOUGHNESS, new AttributeModifier(attributeToughnessHead, 0.5, AttributeModifier.Operation.ADD_NUMBER, EquipmentSlotGroup.HEAD));
 		dataP.set(isCustom, PersistentDataType.BOOLEAN, true);
+		dataP.set(itemVersion, PersistentDataType.INTEGER, 0);
 		dataP.set(equipmentType, PersistentDataType.STRING, "HELMET");
 		data.setDamage(damage);
 		helmet.setItemMeta(data);
@@ -2767,6 +2812,7 @@ public class ItemManager {
 		attributes.put(Attribute.ARMOR, new AttributeModifier(attributeArmorHead, 2, AttributeModifier.Operation.ADD_NUMBER, EquipmentSlotGroup.HEAD));
 		attributes.put(Attribute.ARMOR_TOUGHNESS, new AttributeModifier(attributeToughnessHead, 1.0, AttributeModifier.Operation.ADD_NUMBER, EquipmentSlotGroup.HEAD));
 		dataP.set(isCustom, PersistentDataType.BOOLEAN, true);
+		dataP.set(itemVersion, PersistentDataType.INTEGER, 0);
 		dataP.set(equipmentType, PersistentDataType.STRING, "HELMET");
 		data.setDamage(damage);
 		helmet.setItemMeta(data);
@@ -2794,6 +2840,7 @@ public class ItemManager {
 		attributes.put(Attribute.ARMOR, new AttributeModifier(attributeArmorHead, 2, AttributeModifier.Operation.ADD_NUMBER, EquipmentSlotGroup.HEAD));
 		attributes.put(Attribute.ARMOR_TOUGHNESS, new AttributeModifier(attributeToughnessHead, 1.0, AttributeModifier.Operation.ADD_NUMBER, EquipmentSlotGroup.HEAD));
 		dataP.set(isCustom, PersistentDataType.BOOLEAN, true);
+		dataP.set(itemVersion, PersistentDataType.INTEGER, 0);
 		dataP.set(equipmentType, PersistentDataType.STRING, "HELMET");
 		data.setDamage(damage);
 		helmet.setItemMeta(data);
@@ -2821,6 +2868,7 @@ public class ItemManager {
 		attributes.put(Attribute.ARMOR, new AttributeModifier(attributeArmorHead, 2, AttributeModifier.Operation.ADD_NUMBER, EquipmentSlotGroup.HEAD));
 		attributes.put(Attribute.ARMOR_TOUGHNESS, new AttributeModifier(attributeToughnessHead, 1.0, AttributeModifier.Operation.ADD_NUMBER, EquipmentSlotGroup.HEAD));
 		dataP.set(isCustom, PersistentDataType.BOOLEAN, true);
+		dataP.set(itemVersion, PersistentDataType.INTEGER, 0);
 		dataP.set(equipmentType, PersistentDataType.STRING, "GOLDEN_HELMET");
 		data.setDamage(damage);
 		data.setMaxDamage(99);
@@ -2846,6 +2894,7 @@ public class ItemManager {
 		Damageable data = (Damageable)helmet.getItemMeta();
 		PersistentDataContainer dataP = data.getPersistentDataContainer();
 		dataP.set(isCustom, PersistentDataType.BOOLEAN, true);
+		dataP.set(itemVersion, PersistentDataType.INTEGER, 0);
 		dataP.set(equipmentType, PersistentDataType.STRING, "HELMET");
 		data.setDamage(damage);
 		helmet.setItemMeta(data);
@@ -2874,6 +2923,7 @@ public class ItemManager {
 		attributes.put(Attribute.ARMOR_TOUGHNESS, new AttributeModifier(attributeToughnessHead, 2.875 + (0.125 * level), AttributeModifier.Operation.ADD_NUMBER, EquipmentSlotGroup.HEAD));
 		attributes.put(Attribute.KNOCKBACK_RESISTANCE, new AttributeModifier(attributeKBResHead, 0.1, AttributeModifier.Operation.ADD_NUMBER, EquipmentSlotGroup.HEAD));
 		dataP.set(isCustom, PersistentDataType.BOOLEAN, true);
+		dataP.set(itemVersion, PersistentDataType.INTEGER, 0);
 		dataP.set(equipmentType, PersistentDataType.STRING, "HELMET");
 		dataP.set(itemLevel, PersistentDataType.INTEGER, level);
 		data.setDamage(damage);
@@ -2900,6 +2950,7 @@ public class ItemManager {
 		Damageable data = (Damageable)tunic.getItemMeta();
 		PersistentDataContainer dataP = data.getPersistentDataContainer();
 		dataP.set(isCustom, PersistentDataType.BOOLEAN, true);
+		dataP.set(itemVersion, PersistentDataType.INTEGER, 0);
 		dataP.set(equipmentType, PersistentDataType.STRING, "CHESTPLATE");
 		data.setDamage(damage);
 		tunic.setItemMeta(data);
@@ -2926,6 +2977,7 @@ public class ItemManager {
 		attributes.put(Attribute.ARMOR, new AttributeModifier(attributeArmorChest, 5, AttributeModifier.Operation.ADD_NUMBER, EquipmentSlotGroup.CHEST));
 		attributes.put(Attribute.ARMOR_TOUGHNESS, new AttributeModifier(attributeToughnessChest, 0.5, AttributeModifier.Operation.ADD_NUMBER, EquipmentSlotGroup.CHEST));
 		dataP.set(isCustom, PersistentDataType.BOOLEAN, true);
+		dataP.set(itemVersion, PersistentDataType.INTEGER, 0);
 		dataP.set(equipmentType, PersistentDataType.STRING, "CHESTPLATE");
 		data.setDamage(damage);
 		chestplate.setItemMeta(data);
@@ -2953,6 +3005,7 @@ public class ItemManager {
 		attributes.put(Attribute.ARMOR, new AttributeModifier(attributeArmorChest, 5, AttributeModifier.Operation.ADD_NUMBER, EquipmentSlotGroup.CHEST));
 		attributes.put(Attribute.ARMOR_TOUGHNESS, new AttributeModifier(attributeToughnessChest, 0.5, AttributeModifier.Operation.ADD_NUMBER, EquipmentSlotGroup.CHEST));
 		dataP.set(isCustom, PersistentDataType.BOOLEAN, true);
+		dataP.set(itemVersion, PersistentDataType.INTEGER, 0);
 		dataP.set(equipmentType, PersistentDataType.STRING, "CHESTPLATE");
 		data.setDamage(damage);
 		chestplate.setItemMeta(data);
@@ -2980,6 +3033,7 @@ public class ItemManager {
 		attributes.put(Attribute.ARMOR, new AttributeModifier(attributeArmorChest, 6, AttributeModifier.Operation.ADD_NUMBER, EquipmentSlotGroup.CHEST));
 		attributes.put(Attribute.ARMOR_TOUGHNESS, new AttributeModifier(attributeToughnessChest, 1.0, AttributeModifier.Operation.ADD_NUMBER, EquipmentSlotGroup.CHEST));
 		dataP.set(isCustom, PersistentDataType.BOOLEAN, true);
+		dataP.set(itemVersion, PersistentDataType.INTEGER, 0);
 		dataP.set(equipmentType, PersistentDataType.STRING, "CHESTPLATE");
 		data.setDamage(damage);
 		chestplate.setItemMeta(data);
@@ -3007,6 +3061,7 @@ public class ItemManager {
 		attributes.put(Attribute.ARMOR, new AttributeModifier(attributeArmorChest, 6, AttributeModifier.Operation.ADD_NUMBER, EquipmentSlotGroup.CHEST));
 		attributes.put(Attribute.ARMOR_TOUGHNESS, new AttributeModifier(attributeToughnessChest, 1.0, AttributeModifier.Operation.ADD_NUMBER, EquipmentSlotGroup.CHEST));
 		dataP.set(isCustom, PersistentDataType.BOOLEAN, true);
+		dataP.set(itemVersion, PersistentDataType.INTEGER, 0);
 		dataP.set(equipmentType, PersistentDataType.STRING, "GOLDEN_CHESTPLATE");
 		data.setDamage(damage);
 		data.setMaxDamage(144);
@@ -3032,6 +3087,7 @@ public class ItemManager {
 		Damageable data = (Damageable)chestplate.getItemMeta();
 		PersistentDataContainer dataP = data.getPersistentDataContainer();
 		dataP.set(isCustom, PersistentDataType.BOOLEAN, true);
+		dataP.set(itemVersion, PersistentDataType.INTEGER, 0);
 		dataP.set(equipmentType, PersistentDataType.STRING, "CHESTPLATE");
 		data.setDamage(damage);
 		chestplate.setItemMeta(data);
@@ -3060,6 +3116,7 @@ public class ItemManager {
 		attributes.put(Attribute.ARMOR_TOUGHNESS, new AttributeModifier(attributeToughnessChest, 2.875 + (0.125 * level), AttributeModifier.Operation.ADD_NUMBER, EquipmentSlotGroup.CHEST));
 		attributes.put(Attribute.KNOCKBACK_RESISTANCE, new AttributeModifier(attributeKBResChest, 0.1, AttributeModifier.Operation.ADD_NUMBER, EquipmentSlotGroup.CHEST));
 		dataP.set(isCustom, PersistentDataType.BOOLEAN, true);
+		dataP.set(itemVersion, PersistentDataType.INTEGER, 0);
 		dataP.set(equipmentType, PersistentDataType.STRING, "CHESTPLATE");
 		dataP.set(itemLevel, PersistentDataType.INTEGER, level);
 		data.setDamage(damage);
@@ -3086,6 +3143,7 @@ public class ItemManager {
 		Damageable data = (Damageable)pants.getItemMeta();
 		PersistentDataContainer dataP = data.getPersistentDataContainer();
 		dataP.set(isCustom, PersistentDataType.BOOLEAN, true);
+		dataP.set(itemVersion, PersistentDataType.INTEGER, 0);
 		dataP.set(equipmentType, PersistentDataType.STRING, "LEGGINGS");
 		data.setDamage(damage);
 		pants.setItemMeta(data);
@@ -3112,6 +3170,7 @@ public class ItemManager {
 		attributes.put(Attribute.ARMOR, new AttributeModifier(attributeArmorLegs, 3, AttributeModifier.Operation.ADD_NUMBER, EquipmentSlotGroup.LEGS));
 		attributes.put(Attribute.ARMOR_TOUGHNESS, new AttributeModifier(attributeToughnessLegs, 0.5, AttributeModifier.Operation.ADD_NUMBER, EquipmentSlotGroup.LEGS));
 		dataP.set(isCustom, PersistentDataType.BOOLEAN, true);
+		dataP.set(itemVersion, PersistentDataType.INTEGER, 0);
 		dataP.set(equipmentType, PersistentDataType.STRING, "LEGGINGS");
 		data.setDamage(damage);
 		leggings.setItemMeta(data);
@@ -3139,6 +3198,7 @@ public class ItemManager {
 		attributes.put(Attribute.ARMOR, new AttributeModifier(attributeArmorLegs, 4, AttributeModifier.Operation.ADD_NUMBER, EquipmentSlotGroup.LEGS));
 		attributes.put(Attribute.ARMOR_TOUGHNESS, new AttributeModifier(attributeToughnessLegs, 0.5, AttributeModifier.Operation.ADD_NUMBER, EquipmentSlotGroup.LEGS));
 		dataP.set(isCustom, PersistentDataType.BOOLEAN, true);
+		dataP.set(itemVersion, PersistentDataType.INTEGER, 0);
 		dataP.set(equipmentType, PersistentDataType.STRING, "LEGGINGS");
 		data.setDamage(damage);
 		leggings.setItemMeta(data);
@@ -3166,6 +3226,7 @@ public class ItemManager {
 		attributes.put(Attribute.ARMOR, new AttributeModifier(attributeArmorLegs, 5, AttributeModifier.Operation.ADD_NUMBER, EquipmentSlotGroup.LEGS));
 		attributes.put(Attribute.ARMOR_TOUGHNESS, new AttributeModifier(attributeToughnessLegs, 1.0, AttributeModifier.Operation.ADD_NUMBER, EquipmentSlotGroup.LEGS));
 		dataP.set(isCustom, PersistentDataType.BOOLEAN, true);
+		dataP.set(itemVersion, PersistentDataType.INTEGER, 0);
 		dataP.set(equipmentType, PersistentDataType.STRING, "LEGGINGS");
 		data.setDamage(damage);
 		leggings.setItemMeta(data);
@@ -3193,6 +3254,7 @@ public class ItemManager {
 		attributes.put(Attribute.ARMOR, new AttributeModifier(attributeArmorLegs, 5, AttributeModifier.Operation.ADD_NUMBER, EquipmentSlotGroup.LEGS));
 		attributes.put(Attribute.ARMOR_TOUGHNESS, new AttributeModifier(attributeToughnessLegs, 1.0, AttributeModifier.Operation.ADD_NUMBER, EquipmentSlotGroup.LEGS));
 		dataP.set(isCustom, PersistentDataType.BOOLEAN, true);
+		dataP.set(itemVersion, PersistentDataType.INTEGER, 0);
 		dataP.set(equipmentType, PersistentDataType.STRING, "GOLDEN_LEGGINGS");
 		data.setDamage(damage);
 		data.setMaxDamage(135);
@@ -3218,6 +3280,7 @@ public class ItemManager {
 		Damageable data = (Damageable)leggings.getItemMeta();
 		PersistentDataContainer dataP = data.getPersistentDataContainer();
 		dataP.set(isCustom, PersistentDataType.BOOLEAN, true);
+		dataP.set(itemVersion, PersistentDataType.INTEGER, 0);
 		dataP.set(equipmentType, PersistentDataType.STRING, "LEGGINGS");
 		data.setDamage(damage);
 		leggings.setItemMeta(data);
@@ -3246,6 +3309,7 @@ public class ItemManager {
 		attributes.put(Attribute.ARMOR_TOUGHNESS, new AttributeModifier(attributeToughnessLegs, 2.875 + (0.125 * level), AttributeModifier.Operation.ADD_NUMBER, EquipmentSlotGroup.LEGS));
 		attributes.put(Attribute.KNOCKBACK_RESISTANCE, new AttributeModifier(attributeKBResLegs, 0.1, AttributeModifier.Operation.ADD_NUMBER, EquipmentSlotGroup.LEGS));
 		dataP.set(isCustom, PersistentDataType.BOOLEAN, true);
+		dataP.set(itemVersion, PersistentDataType.INTEGER, 0);
 		dataP.set(equipmentType, PersistentDataType.STRING, "LEGGINGS");
 		dataP.set(itemLevel, PersistentDataType.INTEGER, level);
 		data.setDamage(damage);
@@ -3272,6 +3336,7 @@ public class ItemManager {
 		Damageable data = (Damageable)boots.getItemMeta();
 		PersistentDataContainer dataP = data.getPersistentDataContainer();
 		dataP.set(isCustom, PersistentDataType.BOOLEAN, true);
+		dataP.set(itemVersion, PersistentDataType.INTEGER, 0);
 		dataP.set(equipmentType, PersistentDataType.STRING, "BOOTS");
 		data.setDamage(damage);
 		boots.setItemMeta(data);
@@ -3298,6 +3363,7 @@ public class ItemManager {
 		attributes.put(Attribute.ARMOR, new AttributeModifier(attributeArmorFeet, 1, AttributeModifier.Operation.ADD_NUMBER, EquipmentSlotGroup.FEET));
 		attributes.put(Attribute.ARMOR_TOUGHNESS, new AttributeModifier(attributeToughnessFeet, 0.5, AttributeModifier.Operation.ADD_NUMBER, EquipmentSlotGroup.FEET));
 		dataP.set(isCustom, PersistentDataType.BOOLEAN, true);
+		dataP.set(itemVersion, PersistentDataType.INTEGER, 0);
 		dataP.set(equipmentType, PersistentDataType.STRING, "BOOTS");
 		data.setDamage(damage);
 		boots.setItemMeta(data);
@@ -3325,6 +3391,7 @@ public class ItemManager {
 		attributes.put(Attribute.ARMOR, new AttributeModifier(attributeArmorFeet, 1, AttributeModifier.Operation.ADD_NUMBER, EquipmentSlotGroup.FEET));
 		attributes.put(Attribute.ARMOR_TOUGHNESS, new AttributeModifier(attributeToughnessFeet, 0.5, AttributeModifier.Operation.ADD_NUMBER, EquipmentSlotGroup.FEET));
 		dataP.set(isCustom, PersistentDataType.BOOLEAN, true);
+		dataP.set(itemVersion, PersistentDataType.INTEGER, 0);
 		dataP.set(equipmentType, PersistentDataType.STRING, "BOOTS");
 		data.setDamage(damage);
 		boots.setItemMeta(data);
@@ -3352,6 +3419,7 @@ public class ItemManager {
 		attributes.put(Attribute.ARMOR, new AttributeModifier(attributeArmorFeet, 2, AttributeModifier.Operation.ADD_NUMBER, EquipmentSlotGroup.FEET));
 		attributes.put(Attribute.ARMOR_TOUGHNESS, new AttributeModifier(attributeToughnessFeet, 1.0, AttributeModifier.Operation.ADD_NUMBER, EquipmentSlotGroup.FEET));
 		dataP.set(isCustom, PersistentDataType.BOOLEAN, true);
+		dataP.set(itemVersion, PersistentDataType.INTEGER, 0);
 		dataP.set(equipmentType, PersistentDataType.STRING, "BOOTS");
 		data.setDamage(damage);
 		boots.setItemMeta(data);
@@ -3379,6 +3447,7 @@ public class ItemManager {
 		attributes.put(Attribute.ARMOR, new AttributeModifier(attributeArmorFeet, 2, AttributeModifier.Operation.ADD_NUMBER, EquipmentSlotGroup.FEET));
 		attributes.put(Attribute.ARMOR_TOUGHNESS, new AttributeModifier(attributeToughnessFeet, 1.0, AttributeModifier.Operation.ADD_NUMBER, EquipmentSlotGroup.FEET));
 		dataP.set(isCustom, PersistentDataType.BOOLEAN, true);
+		dataP.set(itemVersion, PersistentDataType.INTEGER, 0);
 		dataP.set(equipmentType, PersistentDataType.STRING, "GOLDEN_BOOTS");
 		data.setDamage(damage);
 		data.setMaxDamage(117);
@@ -3404,6 +3473,7 @@ public class ItemManager {
 		Damageable data = (Damageable)boots.getItemMeta();
 		PersistentDataContainer dataP = data.getPersistentDataContainer();
 		dataP.set(isCustom, PersistentDataType.BOOLEAN, true);
+		dataP.set(itemVersion, PersistentDataType.INTEGER, 0);
 		dataP.set(equipmentType, PersistentDataType.STRING, "BOOTS");
 		data.setDamage(damage);
 		boots.setItemMeta(data);
@@ -3432,6 +3502,7 @@ public class ItemManager {
 		attributes.put(Attribute.ARMOR_TOUGHNESS, new AttributeModifier(attributeToughnessFeet, 2.875 + (0.125 * level), AttributeModifier.Operation.ADD_NUMBER, EquipmentSlotGroup.FEET));
 		attributes.put(Attribute.KNOCKBACK_RESISTANCE, new AttributeModifier(attributeKBResFeet, 0.1, AttributeModifier.Operation.ADD_NUMBER, EquipmentSlotGroup.FEET));
 		dataP.set(isCustom, PersistentDataType.BOOLEAN, true);
+		dataP.set(itemVersion, PersistentDataType.INTEGER, 0);
 		dataP.set(equipmentType, PersistentDataType.STRING, "BOOTS");
 		dataP.set(itemLevel, PersistentDataType.INTEGER, level);
 		data.setDamage(damage);
@@ -3458,6 +3529,7 @@ public class ItemManager {
 		Damageable data = (Damageable)bow.getItemMeta();
 		PersistentDataContainer dataP = data.getPersistentDataContainer();
 		dataP.set(isCustom, PersistentDataType.BOOLEAN, true);
+		dataP.set(itemVersion, PersistentDataType.INTEGER, 0);
 		dataP.set(equipmentType, PersistentDataType.STRING, "BOW");
 		data.setDamage(damage);
 		data.lore(getBowLore(bow));
@@ -3480,6 +3552,7 @@ public class ItemManager {
 		Damageable data = (Damageable)crossbow.getItemMeta();
 		PersistentDataContainer dataP = data.getPersistentDataContainer();
 		dataP.set(isCustom, PersistentDataType.BOOLEAN, true);
+		dataP.set(itemVersion, PersistentDataType.INTEGER, 0);
 		dataP.set(equipmentType, PersistentDataType.STRING, "CROSSBOW");
 		data.setDamage(damage);
 		data.lore(getCrossbowLore(crossbow));
@@ -3502,6 +3575,7 @@ public class ItemManager {
 		Damageable data = (Damageable)trident.getItemMeta();
 		PersistentDataContainer dataP = data.getPersistentDataContainer();
 		dataP.set(isCustom, PersistentDataType.BOOLEAN, true);
+		dataP.set(itemVersion, PersistentDataType.INTEGER, 0);
 		dataP.set(equipmentType, PersistentDataType.STRING, "TRIDENT");
 		data.setDamage(damage);
 		data.addItemFlags(ItemFlag.HIDE_ATTRIBUTES, ItemFlag.HIDE_ENCHANTS);
@@ -3528,6 +3602,7 @@ public class ItemManager {
 		attributes.put(Attribute.ATTACK_SPEED, new AttributeModifier(attributeAttackSpeed, -3.2, AttributeModifier.Operation.ADD_NUMBER, EquipmentSlotGroup.MAINHAND));
 		data.setAttributeModifiers(attributes);
 		dataP.set(isCustom, PersistentDataType.BOOLEAN, true);
+		dataP.set(itemVersion, PersistentDataType.INTEGER, 0);
 		dataP.set(equipmentType, PersistentDataType.STRING, "MACE");
 		data.setDamage(damage);
 		data.lore(getMaceLore(mace));
@@ -3550,6 +3625,7 @@ public class ItemManager {
 		Damageable data = (Damageable)rod.getItemMeta();
 		PersistentDataContainer dataP = data.getPersistentDataContainer();
 		dataP.set(isCustom, PersistentDataType.BOOLEAN, true);
+		dataP.set(itemVersion, PersistentDataType.INTEGER, 0);
 		dataP.set(equipmentType, PersistentDataType.STRING, "FISHING_ROD");
 		data.setDamage(damage);
 		data.lore(getFishingRodLore(rod));
@@ -3572,6 +3648,7 @@ public class ItemManager {
 		Damageable data = (Damageable)shears.getItemMeta();
 		PersistentDataContainer dataP = data.getPersistentDataContainer();
 		dataP.set(isCustom, PersistentDataType.BOOLEAN, true);
+		dataP.set(itemVersion, PersistentDataType.INTEGER, 0);
 		dataP.set(equipmentType, PersistentDataType.STRING, "SHEARS");
 		data.setDamage(damage);
 		data.lore(getShearsLore(shears));
@@ -3594,6 +3671,7 @@ public class ItemManager {
 		Damageable data = (Damageable)elytra.getItemMeta();
 		PersistentDataContainer dataP = data.getPersistentDataContainer();
 		dataP.set(isCustom, PersistentDataType.BOOLEAN, true);
+		dataP.set(itemVersion, PersistentDataType.INTEGER, 0);
 		dataP.set(equipmentType, PersistentDataType.STRING, "ELYTRA");
 		data.setDamage(damage);
 		data.lore(getElytraLore(elytra));
@@ -3616,6 +3694,7 @@ public class ItemManager {
 		Damageable data = (Damageable)wolfArmor.getItemMeta();
 		PersistentDataContainer dataP = data.getPersistentDataContainer();
 		dataP.set(isCustom, PersistentDataType.BOOLEAN, true);
+		dataP.set(itemVersion, PersistentDataType.INTEGER, 0);
 		dataP.set(equipmentType, PersistentDataType.STRING, "WOLF_ARMOR");
 		data.setDamage(damage);
 		data.lore(getWolfArmorLore(wolfArmor));
@@ -3638,6 +3717,7 @@ public class ItemManager {
 		Damageable data = (Damageable)brush.getItemMeta();
 		PersistentDataContainer dataP = data.getPersistentDataContainer();
 		dataP.set(isCustom, PersistentDataType.BOOLEAN, true);
+		dataP.set(itemVersion, PersistentDataType.INTEGER, 0);
 		dataP.set(equipmentType, PersistentDataType.STRING, "TOOL");
 		data.setDamage(damage);
 		data.lore(getToolLore(brush));
@@ -3660,6 +3740,7 @@ public class ItemManager {
 		Damageable data = (Damageable)rod.getItemMeta();
 		PersistentDataContainer dataP = data.getPersistentDataContainer();
 		dataP.set(isCustom, PersistentDataType.BOOLEAN, true);
+		dataP.set(itemVersion, PersistentDataType.INTEGER, 0);
 		dataP.set(equipmentType, PersistentDataType.STRING, "TOOL");
 		data.setDamage(damage);
 		data.lore(getToolLore(rod));
@@ -3682,6 +3763,7 @@ public class ItemManager {
 		Damageable data = (Damageable)flintAndSteel.getItemMeta();
 		PersistentDataContainer dataP = data.getPersistentDataContainer();
 		dataP.set(isCustom, PersistentDataType.BOOLEAN, true);
+		dataP.set(itemVersion, PersistentDataType.INTEGER, 0);
 		dataP.set(equipmentType, PersistentDataType.STRING, "TOOL");
 		data.setDamage(damage);
 		data.lore(getToolLore(flintAndSteel));
@@ -3704,6 +3786,7 @@ public class ItemManager {
 		Damageable data = (Damageable)shield.getItemMeta();
 		PersistentDataContainer dataP = data.getPersistentDataContainer();
 		dataP.set(isCustom, PersistentDataType.BOOLEAN, true);
+		dataP.set(itemVersion, PersistentDataType.INTEGER, 0);
 		dataP.set(equipmentType, PersistentDataType.STRING, "TOOL");
 		data.setDamage(damage);
 		data.lore(getToolLore(shield));
@@ -3726,6 +3809,7 @@ public class ItemManager {
 		Damageable data = (Damageable)rod.getItemMeta();
 		PersistentDataContainer dataP = data.getPersistentDataContainer();
 		dataP.set(isCustom, PersistentDataType.BOOLEAN, true);
+		dataP.set(itemVersion, PersistentDataType.INTEGER, 0);
 		dataP.set(equipmentType, PersistentDataType.STRING, "TOOL");
 		data.setDamage(damage);
 		data.lore(getToolLore(rod));
@@ -3748,6 +3832,7 @@ public class ItemManager {
 		ItemMeta data = pumpkin.getItemMeta();
 		PersistentDataContainer dataP = data.getPersistentDataContainer();
 		dataP.set(isCustom, PersistentDataType.BOOLEAN, true);
+		dataP.set(itemVersion, PersistentDataType.INTEGER, 0);
 		dataP.set(equipmentType, PersistentDataType.STRING, "WEARABLE");
 		data.lore(getWearableLore(pumpkin));
 		data.addItemFlags(ItemFlag.HIDE_ENCHANTS);
@@ -3769,6 +3854,7 @@ public class ItemManager {
 		ItemMeta data = head.getItemMeta();
 		PersistentDataContainer dataP = data.getPersistentDataContainer();
 		dataP.set(isCustom, PersistentDataType.BOOLEAN, true);
+		dataP.set(itemVersion, PersistentDataType.INTEGER, 0);
 		dataP.set(equipmentType, PersistentDataType.STRING, "WEARABLE");
 		data.lore(getWearableLore(head));
 		data.addItemFlags(ItemFlag.HIDE_ENCHANTS);
@@ -3790,6 +3876,7 @@ public class ItemManager {
 		ItemMeta data = head.getItemMeta();
 		PersistentDataContainer dataP = data.getPersistentDataContainer();
 		dataP.set(isCustom, PersistentDataType.BOOLEAN, true);
+		dataP.set(itemVersion, PersistentDataType.INTEGER, 0);
 		dataP.set(equipmentType, PersistentDataType.STRING, "WEARABLE");
 		data.lore(getWearableLore(head));
 		data.addItemFlags(ItemFlag.HIDE_ENCHANTS);
@@ -3811,6 +3898,7 @@ public class ItemManager {
 		ItemMeta data = head.getItemMeta();
 		PersistentDataContainer dataP = data.getPersistentDataContainer();
 		dataP.set(isCustom, PersistentDataType.BOOLEAN, true);
+		dataP.set(itemVersion, PersistentDataType.INTEGER, 0);
 		dataP.set(equipmentType, PersistentDataType.STRING, "WEARABLE");
 		data.lore(getWearableLore(head));
 		data.addItemFlags(ItemFlag.HIDE_ENCHANTS);
@@ -3832,6 +3920,7 @@ public class ItemManager {
 		ItemMeta data = head.getItemMeta();
 		PersistentDataContainer dataP = data.getPersistentDataContainer();
 		dataP.set(isCustom, PersistentDataType.BOOLEAN, true);
+		dataP.set(itemVersion, PersistentDataType.INTEGER, 0);
 		dataP.set(equipmentType, PersistentDataType.STRING, "WEARABLE");
 		data.lore(getWearableLore(head));
 		data.addItemFlags(ItemFlag.HIDE_ENCHANTS);
@@ -3853,6 +3942,7 @@ public class ItemManager {
 		ItemMeta data = head.getItemMeta();
 		PersistentDataContainer dataP = data.getPersistentDataContainer();
 		dataP.set(isCustom, PersistentDataType.BOOLEAN, true);
+		dataP.set(itemVersion, PersistentDataType.INTEGER, 0);
 		dataP.set(equipmentType, PersistentDataType.STRING, "WEARABLE");
 		data.lore(getWearableLore(head));
 		data.addItemFlags(ItemFlag.HIDE_ENCHANTS);
@@ -3874,6 +3964,7 @@ public class ItemManager {
 		ItemMeta data = head.getItemMeta();
 		PersistentDataContainer dataP = data.getPersistentDataContainer();
 		dataP.set(isCustom, PersistentDataType.BOOLEAN, true);
+		dataP.set(itemVersion, PersistentDataType.INTEGER, 0);
 		dataP.set(equipmentType, PersistentDataType.STRING, "WEARABLE");
 		data.lore(getWearableLore(head));
 		data.addItemFlags(ItemFlag.HIDE_ENCHANTS);
@@ -3895,6 +3986,7 @@ public class ItemManager {
 		ItemMeta data = head.getItemMeta();
 		PersistentDataContainer dataP = data.getPersistentDataContainer();
 		dataP.set(isCustom, PersistentDataType.BOOLEAN, true);
+		dataP.set(itemVersion, PersistentDataType.INTEGER, 0);
 		dataP.set(equipmentType, PersistentDataType.STRING, "WEARABLE");
 		data.lore(getWearableLore(head));
 		data.addItemFlags(ItemFlag.HIDE_ENCHANTS);
@@ -3917,6 +4009,7 @@ public class ItemManager {
 		CompassMeta data = (CompassMeta)compass.getItemMeta();
 		PersistentDataContainer dataP = data.getPersistentDataContainer();
 		dataP.set(isCustom, PersistentDataType.BOOLEAN, true);
+		dataP.set(itemVersion, PersistentDataType.INTEGER, 0);
 		dataP.set(equipmentType, PersistentDataType.STRING, "VANISHABLE");
 		data.lore(getVanishableLore(compass));
 		if (lodestone != null) {
@@ -3941,6 +4034,7 @@ public class ItemManager {
 		ItemMeta data = book.getItemMeta();
 		PersistentDataContainer dataP = data.getPersistentDataContainer();
 		dataP.set(isCustom, PersistentDataType.BOOLEAN, true);
+		dataP.set(itemVersion, PersistentDataType.INTEGER, 0);
 		dataP.set(equipmentType, PersistentDataType.STRING, "ENCHANTED_BOOK");
 		data.lore(getEnchantedBookLore(book));
 		data.addItemFlags(ItemFlag.HIDE_ATTRIBUTES, ItemFlag.HIDE_ENCHANTS);
