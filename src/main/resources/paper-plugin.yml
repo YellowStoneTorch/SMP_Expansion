@@ -1,5 +1,5 @@
 name: SMP_Expansion
-version: '0.1.0-ALPHA'
+version: '0.1.1-ALPHA'
 main: io.github.YellowStoneTorch.SMP_Expansion.SMP_Expansion
 api-version: '26.2'
 authors: [ YellowStoneTorch ]
