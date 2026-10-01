@@ -11,6 +11,7 @@ import io.github.YellowStoneTorch.SMP_Expansion.InventoryMenus.AnvilMenu;
 import io.github.YellowStoneTorch.SMP_Expansion.InventoryMenus.EnchantingTableMenu;
 import io.github.YellowStoneTorch.SMP_Expansion.InventoryMenus.InventoryMenu;
 import io.github.YellowStoneTorch.SMP_Expansion.InventoryMenus.SmithingTableMenu;
+import io.github.YellowStoneTorch.SMP_Expansion.Teams.PlayerTeam;
 import io.github.YellowStoneTorch.SMP_Expansion.Teams.TeamManager;
 import io.github.YellowStoneTorch.SMP_Expansion.Villagers.VillagerData;
 import io.papermc.paper.event.player.PlayerInsertLecternBookEvent;
@@ -52,6 +53,7 @@ import org.bukkit.persistence.PersistentDataContainer;
 import org.bukkit.persistence.PersistentDataType;
 import org.bukkit.projectiles.ProjectileSource;
 import org.bukkit.scheduler.BukkitRunnable;
+import org.bukkit.scoreboard.Team;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.ArrayList;
@@ -70,7 +72,7 @@ import static org.bukkit.entity.Villager.Profession.NONE;
 /**
  * Listens for all events, then passes off code
  * @author YellowStoneTorch
- * @version 0.1.0-ALPHA
+ * @version 0.1.2-ALPHA
  */
 public class EventListener implements Listener {
 
@@ -767,6 +769,14 @@ public class EventListener implements Listener {
 		Player player = event.getPlayer();
 		PersistentDataContainer playerData = player.getPersistentDataContainer();
 		String forcedDifficulty = Config.getForcedDifficulty();
+		PlayerTeam team = TeamManager.getPlayerTeam(player);
+		if (team == null)
+			for (Team minecraftTeam: Bukkit.getScoreboardManager().getMainScoreboard().getTeams()) {
+				if (minecraftTeam.hasPlayer(player))
+					minecraftTeam.removePlayer(player);
+			}
+		else if (!team.getMinecraftTeam().hasPlayer(player))
+			team.getMinecraftTeam().addPlayer(player);
 		if (!forcedDifficulty.equals("none"))
 			playerData.set(difficulty, PersistentDataType.STRING, forcedDifficulty);
 		int forcedPvP = Config.getForcedPvP();
