@@ -92,3 +92,6 @@ These features are useful if you plan to play with friends or strangers.  To acc
   * Within a claim, the owner can configure permissions for teammates and other players.  For instance, they can prevent other players from breaking blocks, opening chests, or opening doors.
 
 Read about these features [here](https://github.com/YellowStoneTorch/SMP_Expansion/wiki/Multiplayer-Features).
+
+## Commands
+Learn how to use the commands [here](https://github.com/YellowStoneTorch/SMP_Expansion/wiki/Commands).
