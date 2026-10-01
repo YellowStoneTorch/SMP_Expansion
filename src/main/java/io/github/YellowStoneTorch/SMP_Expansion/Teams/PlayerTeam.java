@@ -27,14 +27,13 @@ import static io.github.YellowStoneTorch.SMP_Expansion.TextModule.comp;
 /**
  * Represents a player team and its options
  * @author YellowStoneTorch
- * @version 0.1.0-ALPHA
+ * @version 0.1.2-ALPHA
  */
 public class PlayerTeam {
 	static final Scoreboard scoreboard;
 
 	static {
-		scoreboard = Bukkit.getScoreboardManager()
-				.getMainScoreboard();
+		scoreboard = Bukkit.getScoreboardManager().getMainScoreboard();
 	}
 
 	private final TextComponent.Builder teamName;
