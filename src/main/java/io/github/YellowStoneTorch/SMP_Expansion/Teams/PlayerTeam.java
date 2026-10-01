@@ -33,7 +33,8 @@ public class PlayerTeam {
 	static final Scoreboard scoreboard;
 
 	static {
-		scoreboard = Bukkit.getScoreboardManager().getMainScoreboard();
+		scoreboard = Bukkit.getScoreboardManager()
+				.getMainScoreboard();
 	}
 
 	private final TextComponent.Builder teamName;
